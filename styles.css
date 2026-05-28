@@ -1,0 +1,151 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.hero {
+    text-align: center;
+    padding: 4rem 0;
+}
+
+.avatar {
+    font-size: 5rem;
+    animation: float 3s ease-in-out infinite;
+    will-change: transform;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+}
+
+.hero h1 {
+    font-size: 4rem;
+    margin: 1rem 0;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.hero p {
+    font-size: 1.5rem;
+    opacity: 0.9;
+}
+
+.about h2, .capabilities h2, .contact h2 {
+    font-size: 2rem;
+    margin: 3rem 0 1.5rem;
+    color: rgba(255,255,255,0.9);
+}
+
+.features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+
+.feature-card {
+    background: rgba(255,255,255,0.1);
+    padding: 1.5rem;
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    transition: transform 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
+    will-change: transform;
+    contain: layout style;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    background: rgba(255,255,255,0.15);
+    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+}
+
+.feature-card .icon {
+    font-size: 2rem;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.feature-card h3 {
+    color: #fff;
+    margin-bottom: 0.5rem;
+}
+
+.capabilities ul {
+    list-style: none;
+    padding-left: 1rem;
+}
+
+.capabilities li {
+    padding: 0.75rem 0;
+    font-size: 1.2rem;
+    opacity: 0.95;
+}
+
+.contact-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 1.5rem;
+}
+
+.btn {
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: transform 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
+    display: inline-block;
+    will-change: transform;
+}
+
+.btn-primary {
+    background: #fff;
+    color: #667eea;
+}
+
+.btn-secondary {
+    background: rgba(255,255,255,0.3);
+    color: #fff;
+    border: 1px solid rgba(255,255,255,0.5);
+}
+
+.btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+footer {
+    text-align: center;
+    padding: 2rem 0;
+    margin-top: 3rem;
+    opacity: 0.8;
+}
+
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 3rem;
+    }
+    
+    .avatar {
+        font-size: 4rem;
+    }
+    
+    .container {
+        padding: 1.5rem;
+    }
+}
