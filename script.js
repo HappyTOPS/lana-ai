@@ -24,11 +24,17 @@ const mobileBtn = document.getElementById('mobileMenuBtn');
 const mobileOverlay = document.getElementById('mobileOverlay');
 
 mobileBtn.addEventListener('click', () => {
-    mobileOverlay.classList.toggle('active');
+    if (mobileOverlay.classList.contains('active')) {
+        mobileOverlay.classList.remove('active');
+    } else {
+        mobileOverlay.classList.add('active');
+    }
 });
 
 mobileOverlay.querySelectorAll('a').forEach(link => {
-    link.addEventListener('click', () => mobileOverlay.classList.remove('active'));
+    link.addEventListener('click', () => {
+        mobileOverlay.classList.remove('active');
+    });
 });
 
 // Smooth scroll for all anchor links
@@ -66,9 +72,8 @@ function updateActiveLink() {
 
         if (scrollPos >= top && scrollPos < bottom) {
             navLinks.forEach(link => {
-                link.style.color = link.getAttribute('href') === `#${id}`
-                    ? 'var(--accent)'
-                    : '';
+                const href = link.getAttribute('href');
+                link.classList.toggle('active', href === `#${id}`);
             });
         }
     });
@@ -76,6 +81,37 @@ function updateActiveLink() {
 
 window.addEventListener('scroll', updateActiveLink, { passive: true });
 updateActiveLink();
+
+// ============================================
+// Scroll Reveal Animations (IntersectionObserver)
+// ============================================
+
+const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('reveal-visible');
+            revealObserver.unobserve(entry.target);
+        }
+    });
+}, {
+    rootMargin: '0px 0px -80px 0px',
+    threshold: 0.1
+});
+
+// Observe all elements with .reveal class
+document.querySelectorAll('.reveal').forEach(el => {
+    revealObserver.observe(el);
+});
+
+// Hero elements: stagger their reveal on page load
+const heroElements = document.querySelectorAll('.hero-content > *');
+heroElements.forEach((el, i) => {
+    el.classList.add('reveal-delay-' + (i + 1));
+    // Trigger hero reveal immediately with a small stagger
+    setTimeout(() => {
+        el.classList.add('reveal-visible');
+    }, 100 + i * 150);
+});
 
 // Console easter egg
 console.log('%c👋 Привет!', 'font-size: 24px; font-weight: bold;');
