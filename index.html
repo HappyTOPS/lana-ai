@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Альберт | Портфолио</title>
+    <title data-i18n="site_title">Альберт | Портфолио</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -13,35 +13,50 @@
 
     <nav class="navbar">
         <div class="nav-inner">
-            <a href="#" class="logo">Альберт</a>
+            <a href="#" class="logo" data-i18n="nav_logo">Альберт</a>
             <ul class="nav-links">
-                <li><a href="#experience">Опыт</a></li>
-                <li><a href="#skills">Навыки</a></li>
-                <li><a href="#projects">Проекты</a></li>
-                <li><a href="#contact">Контакты</a></li>
+                <li><a href="#experience" data-i18n="nav_experience">Опыт</a></li>
+                <li><a href="#skills" data-i18n="nav_skills">Навыки</a></li>
+                <li><a href="#projects" data-i18n="nav_projects">Проекты</a></li>
+                <li><a href="#chat" data-i18n="nav_contact">Контакты</a></li>
             </ul>
-            <button class="theme-toggle" id="themeToggle" aria-label="Переключить тему">
-                <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <circle cx="12" cy="12" r="5"/>
-                    <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>
-                </svg>
-                <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/>
-                </svg>
-            </button>
-            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Меню">
-                <span></span><span></span><span></span>
-            </button>
+
+            <div class="nav-right">
+                <div class="lang-switcher">
+                    <button class="lang-btn active" data-lang="hy">Հայ</button>
+                    <button class="lang-btn" data-lang="ru">RU</button>
+                    <button class="lang-btn" data-lang="en">EN</button>
+                </div>
+
+                <button class="theme-toggle" id="themeToggle" aria-label="Переключить тему">
+                    <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="5"/>
+                        <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>
+                    </svg>
+                    <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/>
+                    </svg>
+                </button>
+
+                <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Меню">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
         </div>
     </nav>
 
     <div class="mobile-overlay" id="mobileOverlay">
         <ul class="mobile-nav-links">
-            <li><a href="#experience">Опыт</a></li>
-            <li><a href="#skills">Навыки</a></li>
-            <li><a href="#projects">Проекты</a></li>
-            <li><a href="#contact">Контакты</a></li>
+            <li><a href="#experience" data-i18n="nav_experience">Опыт</a></li>
+            <li><a href="#skills" data-i18n="nav_skills">Навыки</a></li>
+            <li><a href="#projects" data-i18n="nav_projects">Проекты</a></li>
+            <li><a href="#chat" data-i18n="nav_contact">Контакты</a></li>
         </ul>
+        <div class="mobile-lang-switcher">
+            <button class="lang-btn active" data-lang="hy">Հայ</button>
+            <button class="lang-btn" data-lang="ru">RU</button>
+            <button class="lang-btn" data-lang="en">EN</button>
+        </div>
     </div>
 
     <main>
@@ -49,15 +64,15 @@
         <section class="hero" id="hero">
             <div class="container">
                 <div class="hero-content">
-                    <p class="hero-greeting">Всем привет, я</p>
+                    <p class="hero-greeting" data-i18n="hero_greeting">Всем привет, я</p>
                     <h1 class="hero-name">Альберт</h1>
-                    <p class="hero-title">Продуктовый инженер</p>
-                    <p class="hero-desc">
+                    <p class="hero-title" data-i18n="hero_title">Продуктовый инженер</p>
+                    <p class="hero-desc" data-i18n="hero_desc">
                         Строю цифровые продукты от идеи до релиза. Пишу код, проектирую архитектуру, автоматизирую процессы.
                     </p>
                     <div class="hero-actions">
-                        <a href="#contact" class="btn btn-primary">Связаться</a>
-                        <a href="#projects" class="btn btn-outline">Проекты</a>
+                        <a href="#chat" class="btn btn-primary" data-i18n="hero_cta">Связаться</a>
+                        <a href="#projects" class="btn btn-outline" data-i18n="hero_projects">Проекты</a>
                     </div>
                 </div>
             </div>
@@ -66,36 +81,36 @@
         <!-- Experience -->
         <section class="section" id="experience">
             <div class="container">
-                <h2 class="section-title reveal">Опыт работы</h2>
+                <h2 class="section-title reveal" data-i18n="exp_title">Опыт работы</h2>
                 <div class="experience-list">
 
                     <div class="exp-card reveal reveal-delay-1">
                         <div class="exp-header">
                             <div>
-                                <h3 class="exp-company">Название компании</h3>
-                                <p class="exp-role">Должность</p>
+                                <h3 class="exp-company" data-i18n="exp_1_company">Название компании</h3>
+                                <p class="exp-role" data-i18n="exp_1_role">Должность</p>
                             </div>
-                            <span class="exp-date">2023 — Настоящее время</span>
+                            <span class="exp-date" data-i18n="exp_1_date">2023 — Настоящее время</span>
                         </div>
                         <ul class="exp-duties">
-                            <li>Разработка и поддержка веб-приложений на React / Next.js</li>
-                            <li>Интеграция AI-функций: RAG, LLM-агенты, семантический поиск</li>
-                            <li>CI/CD, Docker, настройка инфраструктуры</li>
+                            <li data-i18n="exp_1_duty_1">Разработка и поддержка веб-приложений на React / Next.js</li>
+                            <li data-i18n="exp_1_duty_2">Интеграция AI-функций: RAG, LLM-агенты, семантический поиск</li>
+                            <li data-i18n="exp_1_duty_3">CI/CD, Docker, настройка инфраструктуры</li>
                         </ul>
                     </div>
 
                     <div class="exp-card reveal reveal-delay-2">
                         <div class="exp-header">
                             <div>
-                                <h3 class="exp-company">Прошлая компания</h3>
-                                <p class="exp-role">Должность</p>
+                                <h3 class="exp-company" data-i18n="exp_2_company">Прошлая компания</h3>
+                                <p class="exp-role" data-i18n="exp_2_role">Должность</p>
                             </div>
-                            <span class="exp-date">2021 — 2023</span>
+                            <span class="exp-date" data-i18n="exp_2_date">2021 — 2023</span>
                         </div>
                         <ul class="exp-duties">
-                            <li>Создание SPA на React + TypeScript</li>
-                            <li>Разработка REST API на Node.js / Python</li>
-                            <li>Работа с PostgreSQL, Redis, WebSockets</li>
+                            <li data-i18n="exp_2_duty_1">Создание SPA на React + TypeScript</li>
+                            <li data-i18n="exp_2_duty_2">Разработка REST API на Node.js / Python</li>
+                            <li data-i18n="exp_2_duty_3">Работа с PostgreSQL, Redis, WebSockets</li>
                         </ul>
                     </div>
 
@@ -106,54 +121,44 @@
         <!-- Skills -->
         <section class="section" id="skills">
             <div class="container">
-                <h2 class="section-title reveal">Навыки</h2>
+                <h2 class="section-title reveal" data-i18n="skills_title">Навыки</h2>
                 <div class="skills-grid">
-
                     <div class="skill-card reveal reveal-delay-1">
                         <div class="skill-icon">⚛️</div>
                         <span class="skill-name">React</span>
                     </div>
-
                     <div class="skill-card reveal reveal-delay-2">
                         <div class="skill-icon">▲</div>
                         <span class="skill-name">Next.js</span>
                     </div>
-
                     <div class="skill-card reveal reveal-delay-3">
                         <div class="skill-icon">🅧</div>
                         <span class="skill-name">TypeScript</span>
                     </div>
-
                     <div class="skill-card reveal reveal-delay-4">
                         <div class="skill-icon">🟢</div>
                         <span class="skill-name">Node.js</span>
                     </div>
-
                     <div class="skill-card reveal reveal-delay-1">
                         <div class="skill-icon">🐍</div>
                         <span class="skill-name">Python</span>
                     </div>
-
                     <div class="skill-card reveal reveal-delay-2">
                         <div class="skill-icon">🐳</div>
                         <span class="skill-name">Docker</span>
                     </div>
-
                     <div class="skill-card reveal reveal-delay-3">
                         <div class="skill-icon">🗄️</div>
                         <span class="skill-name">PostgreSQL</span>
                     </div>
-
                     <div class="skill-card reveal reveal-delay-4">
                         <div class="skill-icon">☁️</div>
                         <span class="skill-name">GCP / AWS</span>
                     </div>
-
                     <div class="skill-card reveal reveal-delay-5">
                         <div class="skill-icon">🤖</div>
                         <span class="skill-name">AI / LLM</span>
                     </div>
-
                 </div>
             </div>
         </section>
@@ -161,7 +166,7 @@
         <!-- Projects -->
         <section class="section" id="projects">
             <div class="container">
-                <h2 class="section-title reveal">Проекты</h2>
+                <h2 class="section-title reveal" data-i18n="projects_title">Проекты</h2>
                 <div class="projects-grid">
 
                     <div class="project-card reveal reveal-delay-1">
@@ -170,7 +175,7 @@
                         </div>
                         <div class="project-info">
                             <h3 class="project-title">AI Assistant</h3>
-                            <p class="project-desc">Умный ассистент с RAG и интеграцией Telegram</p>
+                            <p class="project-desc" data-i18n="project_1_desc">Умный ассистент с RAG и интеграцией Telegram</p>
                             <div class="project-links">
                                 <a href="#" class="project-link" target="_blank">GitHub →</a>
                             </div>
@@ -183,7 +188,7 @@
                         </div>
                         <div class="project-info">
                             <h3 class="project-title">Web App</h3>
-                            <p class="project-desc">Веб-приложение на Next.js + TypeScript</p>
+                            <p class="project-desc" data-i18n="project_2_desc">Веб-приложение на Next.js + TypeScript</p>
                             <div class="project-links">
                                 <a href="#" class="project-link" target="_blank">GitHub →</a>
                             </div>
@@ -196,7 +201,7 @@
                         </div>
                         <div class="project-info">
                             <h3 class="project-title">Dev Tools</h3>
-                            <p class="project-desc">Инструменты для автоматизации и DevOps</p>
+                            <p class="project-desc" data-i18n="project_3_desc">Инструменты для автоматизации и DevOps</p>
                             <div class="project-links">
                                 <a href="#" class="project-link" target="_blank">GitHub →</a>
                             </div>
@@ -207,29 +212,28 @@
             </div>
         </section>
 
-        <!-- Contact -->
-        <section class="section" id="contact">
+        <!-- Chat -->
+        <section class="section" id="chat">
             <div class="container">
-                <h2 class="section-title reveal">Контакты</h2>
-                <div class="contact-content reveal reveal-delay-1">
-                    <form class="contact-form" id="contactForm">
-                        <label>
-                            Имя
-                            <input type="text" name="name" placeholder="Ваше имя" required>
-                        </label>
-                        <label>
-                            Email
-                            <input type="email" name="email" placeholder="your@email.com" required>
-                        </label>
-                        <label>
-                            Сообщение
-                            <textarea name="message" rows="5" placeholder="Ваше сообщение..." required></textarea>
-                        </label>
-                        <button type="submit" class="btn btn-primary">Отправить</button>
-                    </form>
-                    <p class="contact-direct">
-                        Или пишите напрямую: <a href="mailto:albert@example.com">albert@example.com</a>
-                    </p>
+                <h2 class="section-title reveal" data-i18n="chat_title">Онлайн чат</h2>
+                <div class="chat-container reveal reveal-delay-1">
+                    <div class="chat-messages" id="chatMessages">
+                        <div class="chat-msg chat-msg-bot">
+                            <div class="chat-msg-content" data-i18n="chat_welcome">
+                                Привет! Я онлайн-помощник Альберта. Напишите мне, и я передам ваше сообщение. 
+                            </div>
+                        </div>
+                    </div>
+                    <div class="chat-input-area">
+                        <input type="text" id="chatInput" class="chat-input" 
+                               placeholder="Напишите сообщение..." data-i18n-placeholder="chat_placeholder">
+                        <button class="chat-send-btn" id="chatSendBtn">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="22" y1="2" x2="11" y2="13"></line>
+                                <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                            </svg>
+                        </button>
+                    </div>
                 </div>
             </div>
         </section>
@@ -237,7 +241,7 @@
 
     <footer class="footer">
         <div class="container">
-            <p>© 2026 Альберт. Сделано с ❤️</p>
+            <p>© 2026 <span data-i18n="footer_name">Альберт</span>. <span data-i18n="footer_made">Сделано с ❤️</span></p>
         </div>
     </footer>
 
