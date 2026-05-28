@@ -1,67 +1,245 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="ru" data-theme="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lana - Ваш AI Ассистент</title>
+    <title>Альберт | Портфолио</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="container">
-        <header class="hero">
-            <div class="avatar">🦋</div>
-            <h1>Lana</h1>
-            <p>Vаш персональный AI ассистент</p>
-        </header>
 
-        <main>
-            <section class="about">
-                <h2>Обо мне</h2>
-                <p>Я — ваш личный AI помощник. Я помогаю вам учиться, создавать и исследовать новые идеи.</p>
-                <div class="features">
-                    <div class="feature-card">
-                        <span class="icon">🧠</span>
-                        <h3>Обучение</h3>
-                        <p>Помогаю изучать технологии, программирование и новые навыки</p>
-                    </div>
-                    <div class="feature-card">
-                        <span class="icon">💻</span>
-                        <h3>Разработка</h3>
-                        <p>Пишу код, создаю проекты, помогаю с отладкой</p>
-                    </div>
-                    <div class="feature-card">
-                        <span class="icon">🛡️</span>
-                        <h3>Безопасность</h3>
-                        <p>Пентестинг, анализ уязвимостей, этичный хакинг</p>
-                    </div>
-                </div>
-            </section>
+    <nav class="navbar">
+        <div class="nav-inner">
+            <a href="#" class="logo">Альберт</a>
+            <ul class="nav-links">
+                <li><a href="#experience">Опыт</a></li>
+                <li><a href="#skills">Навыки</a></li>
+                <li><a href="#projects">Проекты</a></li>
+                <li><a href="#contact">Контакты</a></li>
+            </ul>
+            <button class="theme-toggle" id="themeToggle" aria-label="Переключить тему">
+                <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="5"/>
+                    <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>
+                </svg>
+                <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/>
+                </svg>
+            </button>
+            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Меню">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
 
-            <section class="capabilities">
-                <h2>Мои возможности</h2>
-                <ul>
-                    <li>🔍 Поиск информации в интернете</li>
-                    <li>💬 Работа с мессенджерами (Telegram, Signal)</li>
-                    <li>📝 Управление файлами и документами</li>
-                    <li>⏰ Планирование задач и напоминания</li>
-                    <li>🖼️ Анализ изображений</li>
-                </ul>
-            </section>
-
-            <section class="contact">
-                <h2>Связь со мной</h2>
-                <p>Я всегда на связи! Просто напишите мне что-нибудь.</p>
-                <div class="contact-buttons">
-                    <a href="#" class="btn btn-primary">Telegram</a>
-                    <a href="#" class="btn btn-secondary">Signal</a>
-                </div>
-            </section>
-        </main>
-
-        <footer>
-            <p>Создано для Альбы ❤️ | 2026</p>
-        </footer>
+    <div class="mobile-overlay" id="mobileOverlay">
+        <ul class="mobile-nav-links">
+            <li><a href="#experience">Опыт</a></li>
+            <li><a href="#skills">Навыки</a></li>
+            <li><a href="#projects">Проекты</a></li>
+            <li><a href="#contact">Контакты</a></li>
+        </ul>
     </div>
+
+    <main>
+        <!-- Hero -->
+        <section class="hero" id="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <p class="hero-greeting">Всем привет, я</p>
+                    <h1 class="hero-name">Альберт</h1>
+                    <p class="hero-title">Продуктовый инженер</p>
+                    <p class="hero-desc">
+                        Строю цифровые продукты от идеи до релиза. Пишу код, проектирую архитектуру, автоматизирую процессы.
+                    </p>
+                    <div class="hero-actions">
+                        <a href="#contact" class="btn btn-primary">Связаться</a>
+                        <a href="#projects" class="btn btn-outline">Проекты</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience -->
+        <section class="section" id="experience">
+            <div class="container">
+                <h2 class="section-title">Опыт работы</h2>
+                <div class="experience-list">
+
+                    <div class="exp-card">
+                        <div class="exp-header">
+                            <div>
+                                <h3 class="exp-company">Название компании</h3>
+                                <p class="exp-role">Должность</p>
+                            </div>
+                            <span class="exp-date">2023 — Настоящее время</span>
+                        </div>
+                        <ul class="exp-duties">
+                            <li>Разработка и поддержка веб-приложений на React / Next.js</li>
+                            <li>Интеграция AI-функций: RAG, LLM-агенты, семантический поиск</li>
+                            <li>CI/CD, Docker, настройка инфраструктуры</li>
+                        </ul>
+                    </div>
+
+                    <div class="exp-card">
+                        <div class="exp-header">
+                            <div>
+                                <h3 class="exp-company">Прошлая компания</h3>
+                                <p class="exp-role">Должность</p>
+                            </div>
+                            <span class="exp-date">2021 — 2023</span>
+                        </div>
+                        <ul class="exp-duties">
+                            <li>Создание SPA на React + TypeScript</li>
+                            <li>Разработка REST API на Node.js / Python</li>
+                            <li>Работа с PostgreSQL, Redis, WebSockets</li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills -->
+        <section class="section" id="skills">
+            <div class="container">
+                <h2 class="section-title">Навыки</h2>
+                <div class="skills-grid">
+
+                    <div class="skill-card">
+                        <div class="skill-icon">⚛️</div>
+                        <span class="skill-name">React</span>
+                    </div>
+
+                    <div class="skill-card">
+                        <div class="skill-icon">▲</div>
+                        <span class="skill-name">Next.js</span>
+                    </div>
+
+                    <div class="skill-card">
+                        <div class="skill-icon">🅧</div>
+                        <span class="skill-name">TypeScript</span>
+                    </div>
+
+                    <div class="skill-card">
+                        <div class="skill-icon">🟢</div>
+                        <span class="skill-name">Node.js</span>
+                    </div>
+
+                    <div class="skill-card">
+                        <div class="skill-icon">🐍</div>
+                        <span class="skill-name">Python</span>
+                    </div>
+
+                    <div class="skill-card">
+                        <div class="skill-icon">🐳</div>
+                        <span class="skill-name">Docker</span>
+                    </div>
+
+                    <div class="skill-card">
+                        <div class="skill-icon">🗄️</div>
+                        <span class="skill-name">PostgreSQL</span>
+                    </div>
+
+                    <div class="skill-card">
+                        <div class="skill-icon">☁️</div>
+                        <span class="skill-name">GCP / AWS</span>
+                    </div>
+
+                    <div class="skill-card">
+                        <div class="skill-icon">🤖</div>
+                        <span class="skill-name">AI / LLM</span>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects -->
+        <section class="section" id="projects">
+            <div class="container">
+                <h2 class="section-title">Проекты</h2>
+                <div class="projects-grid">
+
+                    <div class="project-card">
+                        <div class="project-image" style="background: linear-gradient(135deg, #667eea, #764ba2);">
+                            <span class="project-placeholder">📱</span>
+                        </div>
+                        <div class="project-info">
+                            <h3 class="project-title">AI Assistant</h3>
+                            <p class="project-desc">Умный ассистент с RAG и интеграцией Telegram</p>
+                            <div class="project-links">
+                                <a href="#" class="project-link" target="_blank">GitHub →</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-image" style="background: linear-gradient(135deg, #f093fb, #f5576c);">
+                            <span class="project-placeholder">🌐</span>
+                        </div>
+                        <div class="project-info">
+                            <h3 class="project-title">Web App</h3>
+                            <p class="project-desc">Веб-приложение на Next.js + TypeScript</p>
+                            <div class="project-links">
+                                <a href="#" class="project-link" target="_blank">GitHub →</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-image" style="background: linear-gradient(135deg, #4facfe, #00f2fe);">
+                            <span class="project-placeholder">🔧</span>
+                        </div>
+                        <div class="project-info">
+                            <h3 class="project-title">Dev Tools</h3>
+                            <p class="project-desc">Инструменты для автоматизации и DevOps</p>
+                            <div class="project-links">
+                                <a href="#" class="project-link" target="_blank">GitHub →</a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact -->
+        <section class="section" id="contact">
+            <div class="container">
+                <h2 class="section-title">Контакты</h2>
+                <div class="contact-content">
+                    <form class="contact-form" id="contactForm">
+                        <label>
+                            Имя
+                            <input type="text" name="name" placeholder="Ваше имя" required>
+                        </label>
+                        <label>
+                            Email
+                            <input type="email" name="email" placeholder="your@email.com" required>
+                        </label>
+                        <label>
+                            Сообщение
+                            <textarea name="message" rows="5" placeholder="Ваше сообщение..." required></textarea>
+                        </label>
+                        <button type="submit" class="btn btn-primary">Отправить</button>
+                    </form>
+                    <p class="contact-direct">
+                        Или пишите напрямую: <a href="mailto:albert@example.com">albert@example.com</a>
+                    </p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>© 2026 Альберт. Сделано с ❤️</p>
+        </div>
+    </footer>
 
     <script src="script.js"></script>
 </body>
